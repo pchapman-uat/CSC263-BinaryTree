@@ -31,4 +31,34 @@ class BinarySearchTree{
             root.right = insertRec(root.right, key);
         } return root;
     }
+    public void delete(int key){
+        root = deleteRec(root, key);
+    }
+    private Node deleteRec(Node root, int key){
+        if(root == null){
+            return root;
+        } 
+        if(key<root.key){
+            root.left = deleteRec(root.left, key);
+        }else if(key>root.key){
+            root.right = deleteRec(root.right, key);
+        } else {
+            // If node with only 1 or less children
+            if(root.left == null){
+                return root.right;
+            } else if(root.right == null){
+                return root.left;
+            } 
+            // Node with two children get the in order sucesssor (smallest in right sub tree)
+            root.key = minValue(root.right);
+            // Delete the in order successor
+            root.right = deleteRec(root.right, root.key);
+        } return root;
+    }
+    private int minValue(Node root){
+        int minValue = root.key;
+        while(root.left != null){
+            minValue = root.left.key;
+        } return minValue;        
+    }
 }
