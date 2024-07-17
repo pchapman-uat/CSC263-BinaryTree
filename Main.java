@@ -1,3 +1,4 @@
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World");
@@ -90,5 +91,16 @@ class BinarySearchTree{
             inOrderTraversalRec(root.right);
         }
     }
+    public void preOrderTraversal(){
+        preOrderTraversalRec(root);
+    }
+    private void preOrderTraversalRec(Node root){
+        if(root!=null){
+            System.out.println(root.key + " ");
+            preOrderTraversalRec(root.left);
+            preOrderTraversalRec(root.right);
+        }
+    }
+    // 
     
 }
