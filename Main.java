@@ -25,6 +25,12 @@ public class Main {
         bst.postOrderTraversal();
         System.out.println();
 
+        int key = 70;
+        System.out.println("Search for "+ key);
+        boolean result = bst.search(key);
+        if(result) System.out.println(key+" is in the tree");
+        else System.out.println(key + " is not in the tree");
+
     }
 }
 
