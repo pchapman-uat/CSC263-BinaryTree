@@ -25,12 +25,19 @@ public class Main {
         bst.postOrderTraversal();
         System.out.println();
 
-        int key = 70;
-        System.out.println("Search for "+ key);
-        boolean result = bst.search(key);
-        if(result) System.out.println(key+" is in the tree");
-        else System.out.println(key + " is not in the tree");
+        int keyToSearch = 70;
+        System.out.println("Search for "+ keyToSearch);
+        boolean result = bst.search(keyToSearch);
+        if(result) System.out.println(keyToSearch+" is in the tree");
+        else System.out.println(keyToSearch + " is not in the tree");
+        System.out.println();
 
+        int keyToDelete = 30;
+        System.out.println("Deleteting "+ keyToDelete);
+        bst.delete(keyToDelete);
+        System.out.println("In-Order traversal after deleting " + keyToDelete);
+        bst.inOrderTraversal();
+        System.out.println();
     }
 }
 
