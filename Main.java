@@ -4,6 +4,26 @@ public class Main {
         System.out.println("Hello World");
 
         // Implimentation
+        BinarySearchTree bst = new BinarySearchTree();
+        // Insert keys
+        bst.insert(30);
+        bst.insert(70);
+        bst.insert(100);
+        bst.insert(10);
+        bst.insert(90);
+        bst.insert(20);
+
+        System.out.println("In-Order:");
+        bst.inOrderTraversal();
+        System.out.println();
+
+        System.out.println("Pre-Order:");
+        bst.preOrderTraversal();
+        System.out.println();
+
+        System.out.println("Post-Order:");
+        bst.postOrderTraversal();
+        System.out.println();
 
     }
 }
