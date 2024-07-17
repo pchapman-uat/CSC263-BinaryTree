@@ -3,7 +3,7 @@ public class Main {
         System.out.println("Hello World");
 
         // Implimentation
-        
+
     }
 }
 
@@ -55,7 +55,7 @@ class BinarySearchTree{
             } else if(root.right == null){
                 return root.left;
             } 
-            // Node with two children get the in order sucesssor (smallest in right sub tree)
+            // Node with two children get the inorder sucesssor (smallest in right sub tree)
             root.key = minValue(root.right);
             // Delete the in order successor
             root.right = deleteRec(root.right, root.key);
@@ -79,4 +79,16 @@ class BinarySearchTree{
         }
         return searchRec(root.right, key);
     }
+    // Inorder traversal
+    public void inOrderTraversal(){
+        inOrderTraversalRec(root);
+    }
+    private void inOrderTraversalRec(Node root){
+        if(root != null){
+            inOrderTraversalRec(root.left);
+            System.out.println(root.key + " ");
+            inOrderTraversalRec(root.right);
+        }
+    }
+    
 }
