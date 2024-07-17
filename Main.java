@@ -101,6 +101,16 @@ class BinarySearchTree{
             preOrderTraversalRec(root.right);
         }
     }
-    // 
+    // Post Order Traversal
+    public void postOrderTraversal(){
+        postOrderTraversalRec(root);
+    }
+    private void postOrderTraversalRec(Node root){
+        if(root!=null){
+            postOrderTraversalRec(root.left);
+            postOrderTraversalRec(root.right);
+            System.out.println(root.key + " ");
+        }
+    }
     
 }
